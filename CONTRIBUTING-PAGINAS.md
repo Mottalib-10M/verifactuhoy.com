@@ -1,4 +1,4 @@
-# Ajouter ou étoffer une page d'ES Verifactu
+# Ajouter ou étoffer une page d'Verifactu Hoy
 
 Cette notice s'adresse aux agents qui prolongent le site. Lisez-la en entier avant d'écrire, avec `~/Documents/GitHub/RECETTE-SITE.md` (§0, §3, §6, §7, §9.3, §11, §17.6, §21, §26).
 

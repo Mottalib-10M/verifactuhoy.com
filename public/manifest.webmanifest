@@ -1,6 +1,6 @@
 {
- "name": "ES Verifactu",
- "short_name": "ES Verifactu",
+ "name": "Verifactu Hoy",
+ "short_name": "Verifactu Hoy",
  "description": "¿Me afecta Verifactu y desde cuándo? Diagnóstico, lector del QR, creador Facturae gratis y calendario de la factura electrónica B2B, con cada fecha citada al BOE.",
  "start_url": "/es/",
  "display": "standalone",

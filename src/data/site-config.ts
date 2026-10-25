@@ -1,6 +1,6 @@
 /** Configuration centrale du site (générée par new-site.py). */
-export const SITE_URL = "https://es-verifactu.example";
-export const SITE_NAMES: Record<string, string> = {"es": "ES Verifactu", "en": "ES Verifactu"};
+export const SITE_URL = "https://verifactuhoy.com";
+export const SITE_NAMES: Record<string, string> = {"es": "Verifactu Hoy", "en": "Verifactu Hoy"};
 export const LANG_TAGS: Record<string, string> = {"es": "es-ES", "en": "en-ES"};
 /** Locale des nombres et des dates : anglais britannique pour la version anglaise. */
 export const NUM_TAGS: Record<string, string> = {"es": "es-ES", "en": "en-GB"};
@@ -13,12 +13,12 @@ export const SITE_FOUNDED = '2026';
 export const LAST_UPDATED = '2026-10-25';
 export const AUTHOR_NAME = 'Radif Partners';
 export const AUTHOR_ROLE: Record<string, string> = {"es": "Editor de herramientas gratuitas sobre Verifactu y factura electrónica: diagnóstico, lector del QR, creador Facturae y calendario, todo en el navegador", "en": "Publisher of free tools on Spain's Verifactu and e-invoicing rules: eligibility check, QR reader, Facturae creator and timeline, all in your browser"};
-export const AUTHOR_DESC: Record<string, string> = {"es": "Radif Partners es un editor independiente. Para ES Verifactu lee el Real Decreto 1007/2023, el Real Decreto-ley 15/2025, la Orden HAC/1177/2024, el artículo 201 bis de la Ley General Tributaria, la Ley 18/2022, el Real Decreto 238/2026, la Orden HAC/1028/2026 y el esquema Facturae 3.2.2, y los convierte en herramientas que funcionan por completo en el navegador. No es una administración ni un asesor fiscal y no presta asesoramiento fiscal.", "en": "Radif Partners is an independent publisher. For ES Verifactu it reads Royal Decree 1007/2023, Royal Decree-law 15/2025, Order HAC/1177/2024, article 201 bis of the General Tax Act, Law 18/2022, Royal Decree 238/2026, Order HAC/1028/2026 and the Facturae 3.2.2 schema, and turns them into tools that run entirely in your browser. It is not a public authority or a tax adviser and gives no tax advice."};
+export const AUTHOR_DESC: Record<string, string> = {"es": "Radif Partners es un editor independiente. Para Verifactu Hoy lee el Real Decreto 1007/2023, el Real Decreto-ley 15/2025, la Orden HAC/1177/2024, el artículo 201 bis de la Ley General Tributaria, la Ley 18/2022, el Real Decreto 238/2026, la Orden HAC/1028/2026 y el esquema Facturae 3.2.2, y los convierte en herramientas que funcionan por completo en el navegador. No es una administración ni un asesor fiscal y no presta asesoramiento fiscal.", "en": "Radif Partners is an independent publisher. For Verifactu Hoy it reads Royal Decree 1007/2023, Royal Decree-law 15/2025, Order HAC/1177/2024, article 201 bis of the General Tax Act, Law 18/2022, Royal Decree 238/2026, Order HAC/1028/2026 and the Facturae 3.2.2 schema, and turns them into tools that run entirely in your browser. It is not a public authority or a tax adviser and gives no tax advice."};
 /** Sujets sur lesquels l'editeur est competent (schema.org knowsAbout). Ce sont les
  *  themes reellement traites par le site, pas une liste de mots-cles : un sujet
  *  declare ici sans page qui le couvre est une declaration fausse. */
 export const KNOWS_ABOUT: Record<string, string[]> = {"es": ["Verifactu", "Real Decreto 1007/2023", "Facturae 3.2.2", "FACe", "factura electrónica B2B", "TicketBAI", "SII"], "en": ["Verifactu", "Spanish invoicing software rules", "Facturae", "Spanish B2B e-invoicing", "TicketBAI"]};
-export const CONTACT_EMAIL = "contacto@es-verifactu.example";
+export const CONTACT_EMAIL = "contacto@verifactuhoy.com";
 export const THEME_COLOR = '#AA151B';
 export const LOGO_SYMBOL = 'QR';
 export const BING_VERIFY_CODE = '';

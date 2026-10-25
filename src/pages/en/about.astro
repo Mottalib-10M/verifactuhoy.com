@@ -7,8 +7,8 @@ import { srcLink } from '../../lib/helpers';
 import { profilePageSchema, breadcrumbSchema } from '../../lib/seo';
 const lang = 'en';
 const path = route('about', lang);
-const title = 'ES Verifactu 2026: Publisher, Sources and Independence';
-const description = 'ES Verifactu 2026 is published by Radif Partners: free, independent tools on Spain’s Verifactu and e-invoicing rules that run in your browser, no account.';
+const title = 'Verifactu Hoy 2026: Publisher, Sources and Independence';
+const description = 'Verifactu Hoy 2026 is published by Radif Partners: free, independent tools on Spain’s Verifactu and e-invoicing rules that run in your browser, no account.';
 const s = (k: string, t: string) => srcLink(k, lang, t);
 ---
 <PageLayout title={title} description={description} lang={lang} jsonLd={[profilePageSchema({ path, lang }), breadcrumbSchema([{ name: 'Home', path: route('home', lang) }, { name: 'About', path }])]} breadcrumbs={[{ label: 'About' }]}>

@@ -3,4 +3,4 @@ Allow: /
 
 Disallow: /*?*
 
-Sitemap: https://es-verifactu.example/sitemap-index.xml
+Sitemap: https://verifactuhoy.com/sitemap-index.xml
