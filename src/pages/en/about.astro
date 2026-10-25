@@ -1,0 +1,32 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import LegalIdentity from '../../components/LegalIdentity.astro';
+import { route } from '../../i18n/routes';
+import { AUTHOR_NAME, AUTHOR_DESC, CONTACT_EMAIL, SITE_NAMES } from '../../data/site-config';
+import { srcLink } from '../../lib/helpers';
+import { profilePageSchema, breadcrumbSchema } from '../../lib/seo';
+const lang = 'en';
+const path = route('about', lang);
+const title = 'ES Verifactu 2026: Publisher, Sources and Independence';
+const description = 'ES Verifactu 2026 is published by Radif Partners: free, independent tools on Spain’s Verifactu and e-invoicing rules that run in your browser, no account.';
+const s = (k: string, t: string) => srcLink(k, lang, t);
+---
+<PageLayout title={title} description={description} lang={lang} jsonLd={[profilePageSchema({ path, lang }), breadcrumbSchema([{ name: 'Home', path: route('home', lang) }, { name: 'About', path }])]} breadcrumbs={[{ label: 'About' }]}>
+  <article class="prose prose-slate max-w-none">
+    <h1>About {SITE_NAMES[lang]}</h1>
+    <p>{AUTHOR_DESC.en}</p>
+    <h2>Why this site exists</h2>
+    <p>Verifactu dates have moved three times, and Spanish B2B e-invoicing spent years as a law without its regulation. Many articles still carry dates that no longer apply, and most explanations come bundled with software for sale. This site aims for the opposite: know in a minute whether it applies to you and when, with the BOE article next to the answer, and read a QR code, compute a hash or create a Facturae file without any data leaving your device.</p>
+    <h2>Who publishes it</h2>
+    <p>The publisher is {AUTHOR_NAME}, a company that builds tools from public rules and data. {AUTHOR_NAME} is not a public authority, a tax adviser or a law firm. The site is not affiliated with the Spanish Tax Agency, the Ministry of Finance, the provincial treasuries or any software vendor, and uses none of their logos. It sells no software and has no affiliate links.</p>
+    <LegalIdentity lang={lang} />
+    <h2>Where the rules come from</h2>
+    <p>Verifactu’s scope and timeline come from <Fragment set:html={s('rd1007', 'Royal Decree 1007/2023')} /> as worded by <Fragment set:html={s('rdl15', 'Royal Decree-law 15/2025')} />; the technical details from <Fragment set:html={s('orden1177', 'Order HAC/1177/2024')} /> and the AEAT specifications. B2B e-invoicing comes from <Fragment set:html={s('ley18', 'Law 18/2022')} />, <Fragment set:html={s('rd238', 'Royal Decree 238/2026')} /> and <Fragment set:html={s('orden1028', 'Order HAC/1028/2026')} />; penalties from the <Fragment set:html={s('lgt', 'General Tax Act')} />. How we calculate is on the <a href={route('method', lang)}>method</a> page; how we correct, in the <a href={route('editorial', lang)}>editorial policy</a>.</p>
+    <h2>Your data</h2>
+    <p>The tools work only in your browser: no account, no form that sends us your invoices, no file storage. Details are in the <a href={route('privacy', lang)}>privacy policy</a>.</p>
+    <h2>What the site does not do</h2>
+    <p>It does not issue invoices for you, send records to the AEAT, sign documents or act as a certified invoicing system, and it gives no tax advice. Results rest on the published rules; your own case is for your adviser and the tax authority to judge.</p>
+    <h2>Write to us</h2>
+    <p><a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>, if you spot an outdated date, a misread rule or a Facturae file the viewer shows incorrectly.</p>
+  </article>
+</PageLayout>

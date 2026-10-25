@@ -1,0 +1,30 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { SITE_URL } from '../../data/site-config';
+import { route } from '../../i18n/routes';
+import { breadcrumbSchema } from '../../lib/seo';
+const lang = 'es';
+const code = (name: string, t: string, h: number) => `<iframe src="${SITE_URL}/embed/${lang}/${name}/" title="${t}" width="100%" height="${h}" style="border:0;max-width:1100px" loading="lazy"></iframe>`;
+const items = [
+  { name: 'verifactu-check', h2: 'Diagnóstico Verifactu', text: 'Cuatro respuestas y tus lectores saben si Verifactu les afecta y antes de qué fecha debe cumplir su programa.', t: '¿Me afecta Verifactu?', h: 760 },
+  { name: 'qr-reader', h2: 'Lector del QR tributario', text: 'Lee el QR de una factura y abre la página oficial de cotejo de la AEAT. La imagen no sale del equipo de tus lectores.', t: 'Lector del QR Verifactu', h: 760 },
+  { name: 'b2b-check', h2: 'Factura electrónica B2B', text: 'Dice desde cuándo es obligatoria la factura electrónica entre empresas según el RD 238/2026, por volumen y forma jurídica.', t: 'Fecha de la factura electrónica B2B', h: 720 },
+];
+---
+<PageLayout title="Insertar gratis las herramientas Verifactu: diagnóstico, QR, B2B" description="Inserta gratis con un iframe el diagnóstico Verifactu, el lector del QR tributario y el checker de la factura electrónica B2B: copias el código y las fechas se actualizan solas." lang={lang} noindex={true} jsonLd={[breadcrumbSchema([{ name: 'Inicio', path: route('home', lang) }, { name: 'Widget', path: route('widget', lang) }])]} breadcrumbs={[{ label: 'Widget' }]} showAuthor={false}>
+  <header class="mb-6">
+    <h1 class="text-3xl font-bold text-navy-900 md:text-4xl">Insertar las herramientas Verifactu</h1>
+    <p class="mt-3 text-lg text-navy-700">Para asociaciones, colegios profesionales, gestorías y cámaras: lo copias una vez y las fechas nuevas aparecen solas.</p>
+  </header>
+  <div class="prose prose-slate max-w-none">
+    {items.map((i) => (<>
+      <h2>{i.h2}</h2>
+      <p>{i.text}</p>
+      <pre class="overflow-x-auto rounded-lg bg-navy-900 p-4 text-sm text-white"><code>{code(i.name, i.t, i.h)}</code></pre>
+    </>))}
+    <p>Para la versión inglesa, cambia <code>/embed/es/</code> por <code>/embed/en/</code>. Condiciones: el enlace a la fuente bajo la herramienta queda visible, la herramienta no se modifica y se ofrece sin garantía. Lo que escriben tus lectores se queda en su equipo. Dudas en la página de <a href={route('contact', lang)}>contacto</a>.</p>
+  </div>
+  <div class="mt-8 overflow-hidden rounded-xl border border-navy-200">
+    <iframe src={`/embed/${lang}/verifactu-check/`} title="¿Me afecta Verifactu?" width="100%" height="760" style="border:0" loading="lazy"></iframe>
+  </div>
+</PageLayout>

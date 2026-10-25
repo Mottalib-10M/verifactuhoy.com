@@ -1,0 +1,37 @@
+---
+/** Método: reglas, huella, QR, Facturae, pruebas, límites. Cada cifra sale de params-2026.json. */
+import PageLayout from '../../layouts/PageLayout.astro';
+import { route } from '../../i18n/routes';
+import { KIT as K } from '../../lib/kit';
+import { srcLink } from '../../lib/helpers';
+import { breadcrumbSchema, webPageSchema } from '../../lib/seo';
+import { displayDate, formatMoney } from '../../lib/format';
+const lang = 'es';
+const path = route('method', lang);
+const P = K.P, V = P.verifactu, B = P.b2b;
+const title = 'Método de ES Verifactu 2026: normas, cálculos y pruebas';
+const description = 'Cómo calculan las herramientas en 2026: fechas del BOE, huella SHA-256 probada con los ejemplos de la AEAT, URL del QR y Facturae validado contra el esquema.';
+const s = (k: string, t: string) => srcLink(k, lang, t);
+const d = (x: string) => displayDate(x, 'es-ES');
+const eur = (x: number) => formatMoney(x, 0, lang);
+---
+<PageLayout title={title} description={description} lang={lang} jsonLd={[webPageSchema({ name: 'Método', description, path, lang }), breadcrumbSchema([{ name: 'Inicio', path: route('home', lang) }, { name: 'Método', path }])]} breadcrumbs={[{ label: 'Método' }]}>
+  <article class="prose prose-slate max-w-none">
+    <h1>Cómo calculan las herramientas</h1>
+    <p>Todas las herramientas funcionan en tu navegador. Una imagen de QR, un Facturae que abres o los datos que tecleas en el creador se quedan en tu equipo: no hay subida, ni cuenta, ni almacenamiento. La base son los textos publicados en el BOE y las especificaciones técnicas de la Agencia Tributaria. Última lectura: {d(P.retrieved_at)}.</p>
+    <h2>Las fechas y los umbrales</h2>
+    <p>Los simuladores leen sus valores de un único fichero en el que cada dato lleva su fuente y su fecha de lectura. Para Verifactu: sistemas adaptados antes del {d(V.sociedadesAntes)} para los contribuyentes del Impuesto sobre Sociedades y antes del {d(V.restoAntes)} para el resto, según la disposición final cuarta del <Fragment set:html={s('rd1007', 'RD 1007/2023')} /> en la redacción del <Fragment set:html={s('rdl15', 'RDL 15/2025')} />. Antes de ese texto las fechas eran el 1 de enero y el 1 de julio de 2026 (<Fragment set:html={s('rd254', 'RD 254/2025')} />). Para la factura electrónica entre empresas: {B.mesesGrandes} meses (volumen de operaciones de más de {eur(B.umbral)}) o {B.mesesResto} meses contados desde la entrada en vigor de la <Fragment set:html={s('orden1028', 'Orden HAC/1028/2026')} />, el {d(B.ordenVigor)}. Las fechas resultantes, {d(B.fechaGrandes)} y {d(B.fechaResto)}, son nuestro cálculo de fecha a fecha: el BOE no las escribe así.</p>
+    <h2>Plazos en días</h2>
+    <p>Los plazos del SII y de los estados de la factura B2B cuentan días naturales sin sábados, domingos ni festivos nacionales. Usamos las fiestas de ámbito nacional comunes a todas las comunidades que publican las resoluciones de la Dirección General de Trabajo para <Fragment set:html={s('festivos2026', '2026')} /> y <Fragment set:html={s('festivos2027', '2027')} />. Para fechas de otros años la herramienta lo avisa.</p>
+    <h2>La huella</h2>
+    <p>La calculadora aplica el algoritmo del <Fragment set:html={s('aeatHuella', 'documento de la AEAT')} /> (versión {P.huella.docVersion}): cadena campo=valor unida por «&amp;», valores sin espacios en los extremos, codificación UTF-8 y SHA-256 en hexadecimal mayúsculas. El SHA-256 está escrito en JavaScript puro, sin depender del navegador. Las pruebas automáticas comprueban que da exactamente las tres huellas publicadas por la AEAT para sus ejemplos de alta, alta encadenada y anulación.</p>
+    <h2>El QR</h2>
+    <p>El lector reconoce las URL de cotejo de producción y de pruebas, en sus dos variantes (VERI*FACTU y no VERI*FACTU), y comprueba el formato de cada parámetro según la <Fragment set:html={s('aeatQr', 'especificación del QR')} /> (versión {P.qr.docVersion}): NIF de 9 caracteres, serie y número de hasta {P.qr.numserieMax} caracteres imprimibles, fecha DD-MM-AAAA y hasta {P.qr.importeEnterosMax} enteros con 2 decimales. Para la letra del DNI y del NIE aplica el cálculo del módulo 23. Que el formato sea correcto no demuestra que la factura exista: eso solo lo responde la AEAT en su página de cotejo.</p>
+    <h2>El Facturae</h2>
+    <p>El creador genera un XML Facturae {P.facturae.version} sin firma. Las pruebas generan facturas de ejemplo (a una empresa y a una Administración con sus tres códigos DIR3, con y sin retención) y las validan con xmllint contra el <Fragment set:html={s('facturae', 'esquema oficial Facturae 3.2.2')} />, descargado de facturae.gob.es en el momento de la prueba y no copiado en el sitio. El visor recalcula sumas, cuotas y total, y dice si el fichero lleva firma; no comprueba la validez del certificado.</p>
+    <h2>Límites</h2>
+    <p>Las herramientas no conocen tu contabilidad ni tus contratos. Los territorios forales solo se tratan para decir que se rigen por su propia norma. Ninguna herramienta firma, envía registros a la AEAT ni sustituye a un sistema de facturación conforme. Las sanciones se calculan con los importes fijos del artículo 201 bis; la graduación concreta la decide la Administración.</p>
+    <h2>Actualización</h2>
+    <p>Releemos el BOE y la sede de la AEAT con regularidad. Un cambio entra en el sitio solo cuando todas las pruebas vuelven a pasar. Si ves un error, escríbenos desde la página de <a href={route('contact', lang)}>contacto</a>; cómo lo corregimos está en la <a href={route('editorial', lang)}>política editorial</a>.</p>
+  </article>
+</PageLayout>

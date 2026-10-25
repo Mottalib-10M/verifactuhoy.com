@@ -1,0 +1,21 @@
+{
+ "name": "ES Verifactu",
+ "short_name": "ES Verifactu",
+ "description": "¿Me afecta Verifactu y desde cuándo? Diagnóstico, lector del QR, creador Facturae gratis y calendario de la factura electrónica B2B, con cada fecha citada al BOE.",
+ "start_url": "/es/",
+ "display": "standalone",
+ "background_color": "#ffffff",
+ "theme_color": "#AA151B",
+ "icons": [
+  {
+   "src": "/icon-192.png",
+   "sizes": "192x192",
+   "type": "image/png"
+  },
+  {
+   "src": "/icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png"
+  }
+ ]
+}

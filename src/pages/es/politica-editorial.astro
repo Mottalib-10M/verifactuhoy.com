@@ -1,0 +1,27 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { AUTHOR_NAME, CONTACT_EMAIL, LAST_UPDATED, REVIEW_CYCLE_MONTHS, SITE_NAMES } from '../../data/site-config';
+import { route } from '../../i18n/routes';
+const lang = 'es';
+---
+<PageLayout title={`Política editorial de ${SITE_NAMES[lang]}: fuentes y comprobaciones`} description="De dónde salen las fechas, las reglas y los formatos, en qué orden pesan las fuentes, cómo probamos las herramientas, cuándo actualizamos y qué pasa si algo falla." lang={lang} noindex={true} breadcrumbs={[{ label: 'Política editorial' }]} showAuthor={false}>
+  <div class="prose prose-slate max-w-none">
+    <h1>Política editorial y correcciones</h1>
+    <p>Planificar con una fecha equivocada o emitir una factura con un formato que no vale cuesta tiempo y dinero. Esta página dice de dónde sale todo y qué hacemos cuando algo está mal.</p>
+    <h2>Responsable</h2><p>{AUTHOR_NAME} responde del contenido y de las herramientas. Contacto: <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.</p>
+    <h2>Orden de las fuentes</h2>
+    <ol>
+      <li><strong>Leyes, reales decretos y órdenes</strong> publicados en el BOE, en su texto consolidado vigente: Ley General Tributaria, RD 1007/2023, Orden HAC/1177/2024, Ley 18/2022, RD 238/2026, Orden HAC/1028/2026, Reglamento de facturación y Reglamento del IVA;</li>
+      <li><strong>Documentos técnicos de la Agencia Tributaria</strong>: especificaciones del QR y de la huella, preguntas frecuentes para desarrolladores;</li>
+      <li><strong>Formato Facturae</strong>: esquema y política de firma publicados en facturae.gob.es; para los territorios forales, las páginas de cada Hacienda foral.</li>
+    </ol>
+    <p>Los artículos de prensa, los foros y los blogs de fabricantes de programas no son fuente de una regla. Si dos fuentes chocan, manda la de rango superior y lo decimos.</p>
+    <h2>Cada cifra con su fecha</h2><p>Cada fecha, umbral e importe se guarda con su fuente y su día de lectura en un fichero de parámetros. Las páginas leen sus cifras de ahí, nunca del texto. Lo anunciado o en proyecto se marca como tal y no entra en las herramientas hasta que se publica en el BOE.</p>
+    <h2>Pruebas</h2><p>La huella se prueba con los ejemplos oficiales de la AEAT; el Facturae generado, contra el esquema oficial; las reglas, con casos escritos a partir del texto. Las pruebas se ejecutan en cada cambio.</p>
+    <h2>Calendario</h2><p>Revisión completa al menos cada {REVIEW_CYCLE_MONTHS} meses y tras cualquier cambio publicado en el BOE o en la sede de la AEAT sobre Verifactu o la factura electrónica.</p>
+    <h2>Correcciones</h2>
+    <ol><li>Comprobación en la fuente.</li><li>Corrección en el fichero de parámetros o en la regla, con una prueba nueva.</li><li>Nueva fecha en todas las páginas.</li></ol>
+    <h2>Independencia</h2><p>Sin dinero de fabricantes de programas, gestorías ni administraciones. Sin enlaces de afiliación, contenido patrocinado, recomendaciones de marcas ni formularios de captación.</p>
+    <p>Ver también el <a href={route('method', lang)}>método</a>. Versión: {LAST_UPDATED}.</p>
+  </div>
+</PageLayout>

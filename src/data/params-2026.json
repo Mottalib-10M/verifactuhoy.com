@@ -1,0 +1,344 @@
+{
+  "_lisezmoi": "Todos los valores jurídicos y técnicos del sitio, leídos en el texto oficial el día retrieved_at. Ningún número se escribe a mano en las páginas: se lee de aquí (CONTRIBUTING-PAGINAS.md).",
+  "year": 2026,
+  "retrieved_at": "2026-10-25",
+  "valid_from": "2026-01-01",
+  "valid_to": "2026-12-31",
+  "verifactu": {
+    "rd": "Real Decreto 1007/2023, de 5 de diciembre",
+    "rdBoe": "2023-12-06",
+    "sociedadesAntes": "2027-01-01",
+    "restoAntes": "2027-07-01",
+    "fechasPrevias": {
+      "rd254": [
+        "2026-01-01",
+        "2026-07-01"
+      ],
+      "original": [
+        "2025-07-01",
+        "2025-07-01"
+      ]
+    },
+    "rdl15Fecha": "2025-12-02",
+    "rdl15Boe": "2025-12-03",
+    "rdl15Convalidacion": "2025-12-11",
+    "rd254Fecha": "2025-04-01",
+    "ordenFecha": "2024-10-17",
+    "ordenBoe": "2024-10-28",
+    "ordenVigor": "2024-10-29",
+    "productoresMeses": 9,
+    "productoresDesde": "2025-07-29",
+    "lotesMax": 1000,
+    "esperaSegundos": 60,
+    "reintentoHoras": 1,
+    "firma": "XAdES Enveloped (ETSI EN 319 132)"
+  },
+  "qr": {
+    "verifactu": "https://www2.agenciatributaria.gob.es/wlpl/TIKE-CONT/ValidarQR",
+    "noVerifactu": "https://www2.agenciatributaria.gob.es/wlpl/TIKE-CONT/ValidarQRNoVerifactu",
+    "pruebasVerifactu": "https://prewww2.aeat.es/wlpl/TIKE-CONT/ValidarQR",
+    "pruebasNoVerifactu": "https://prewww2.aeat.es/wlpl/TIKE-CONT/ValidarQRNoVerifactu",
+    "mmMin": 30,
+    "mmMax": 40,
+    "margenMin": 2,
+    "margenRecomendado": 6,
+    "correccion": "M",
+    "norma": "ISO/IEC 18004:2015",
+    "numserieMax": 60,
+    "importeEnterosMax": 12,
+    "docVersion": "0.5.0",
+    "docFecha": "2025-12-10",
+    "textoArriba": "QR tributario:",
+    "textoAbajoVerifactu": "Factura verificable en la sede electrónica de la AEAT",
+    "textoAbajoCorto": "VERI*FACTU"
+  },
+  "huella": {
+    "algoritmo": "SHA-256",
+    "docVersion": "0.1.2",
+    "docFecha": "2024-08-27",
+    "vector1": "3C464DAF61ACB827C65FDA19F352A4E3BDC2C640E9E9FC4CC058073F38F12F60",
+    "vector2": "F7B94CFD8924EDFF273501B01EE5153E4CE8F259766F88CF6ACB8935802A2B97",
+    "vector3": "177547C0D57AC74748561D054A9CEC14B4C4EA23D1BEFD6F2E69E3A388F90C68"
+  },
+  "sanciones": {
+    "fabricante": 150000,
+    "sinCertificado": 1000,
+    "tenencia": 50000,
+    "reduccionPronto": 0.4,
+    "vigorDesde": "2021-10-11",
+    "b2cGrandes": 10000
+  },
+  "b2b": {
+    "ley": "Ley 18/2022, de 28 de septiembre",
+    "rd": "Real Decreto 238/2026, de 25 de marzo",
+    "rdBoe": "2026-03-31",
+    "rdVigor": "2026-04-20",
+    "orden": "Orden HAC/1028/2026, de 2 de octubre",
+    "ordenBoe": "2026-10-05",
+    "ordenVigor": "2026-10-06",
+    "umbral": 8000000,
+    "mesesGrandes": 12,
+    "mesesResto": 24,
+    "fechaGrandes": "2027-10-06",
+    "fechaResto": "2028-10-06",
+    "pdfMeses": 12,
+    "estadosVoluntariosHasta": "2029-10-06",
+    "diasEstados": 4,
+    "solucionPublicaAntesMeses": 2,
+    "directivaVida": "Directiva (UE) 2025/516, de 11 de marzo de 2025",
+    "formatos": [
+      "UBL (EN 16931)",
+      "UN/CEFACT CII",
+      "EDIFACT",
+      "Facturae"
+    ]
+  },
+  "sii": {
+    "volumen": 6010121.04,
+    "diasExpedidas": 4,
+    "diasTercero": 8,
+    "diasRecibidas": 4,
+    "limiteDia": 16
+  },
+  "simplificada": {
+    "general": 400,
+    "sectores": 3000
+  },
+  "factura": {
+    "rectificativaAnos": 4,
+    "conservacionAnos": 4,
+    "faceExclusion": 5000,
+    "faceTamanoMb": 8,
+    "faceRegistroDias": 30,
+    "faceDesde": "2015-01-15"
+  },
+  "facturae": {
+    "version": "3.2.2",
+    "namespace": "www.facturae.gob.es/formato/Versiones/Facturaev3_2_2.xml",
+    "xsd": "https://www.facturae.gob.es/content/dam/facturae/formato/versiones/Facturaev3_2_2.xml",
+    "appVersion": "3.4",
+    "politicaFirma": "3.1",
+    "_namespace": "Espacio de nombres XML (no es una página web): se antepone http:// en engine/facturae.ts."
+  },
+  "festivos": {
+    "2026": [
+      "2026-01-01",
+      "2026-01-06",
+      "2026-04-03",
+      "2026-05-01",
+      "2026-08-15",
+      "2026-10-12",
+      "2026-12-08",
+      "2026-12-25"
+    ],
+    "2027": [
+      "2027-01-01",
+      "2027-01-06",
+      "2027-03-26",
+      "2027-05-01",
+      "2027-10-12",
+      "2027-11-01",
+      "2027-12-06",
+      "2027-12-08",
+      "2027-12-25"
+    ]
+  },
+  "sources": {
+    "rd1007": {
+      "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2023-24840",
+      "label": {
+        "es": "Real Decreto 1007/2023, Reglamento de los sistemas informáticos de facturación (BOE, texto consolidado)",
+        "en": "Royal Decree 1007/2023, invoicing software regulation (BOE, consolidated text)"
+      }
+    },
+    "rdl15": {
+      "url": "https://www.boe.es/buscar/doc.php?id=BOE-A-2025-24446",
+      "label": {
+        "es": "Real Decreto-ley 15/2025, de 2 de diciembre, disposición final primera (BOE)",
+        "en": "Royal Decree-law 15/2025 of 2 December, first final provision (BOE)"
+      }
+    },
+    "rd254": {
+      "url": "https://www.boe.es/buscar/doc.php?id=BOE-A-2025-6600",
+      "label": {
+        "es": "Real Decreto 254/2025, de 1 de abril, que modificó las fechas del RD 1007/2023 (BOE)",
+        "en": "Royal Decree 254/2025 of 1 April, which changed the RD 1007/2023 dates (BOE)"
+      }
+    },
+    "orden1177": {
+      "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2024-22138",
+      "label": {
+        "es": "Orden HAC/1177/2024, especificaciones técnicas de los sistemas de facturación (BOE)",
+        "en": "Order HAC/1177/2024, technical specifications for invoicing systems (BOE)"
+      }
+    },
+    "lgt": {
+      "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2003-23186",
+      "label": {
+        "es": "Ley 58/2003, General Tributaria: artículos 29.2.j, 188 y 201 bis (BOE)",
+        "en": "General Tax Act 58/2003: articles 29.2.j, 188 and 201 bis (BOE)"
+      }
+    },
+    "ley18": {
+      "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2022-15818",
+      "label": {
+        "es": "Ley 18/2022, de creación y crecimiento de empresas, artículo 12 y disposición final octava (BOE)",
+        "en": "Law 18/2022 on business creation and growth, article 12 and eighth final provision (BOE)"
+      }
+    },
+    "ley56": {
+      "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2007-22440",
+      "label": {
+        "es": "Ley 56/2007, de impulso de la sociedad de la información, artículo 2 bis (BOE)",
+        "en": "Law 56/2007 on the information society, article 2 bis (BOE)"
+      }
+    },
+    "rd238": {
+      "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2026-7295",
+      "label": {
+        "es": "Real Decreto 238/2026, factura electrónica obligatoria entre empresarios y profesionales (BOE)",
+        "en": "Royal Decree 238/2026 on mandatory B2B e-invoicing (BOE)"
+      }
+    },
+    "orden1028": {
+      "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2026-20587",
+      "label": {
+        "es": "Orden HAC/1028/2026, solución pública de facturación electrónica (BOE)",
+        "en": "Order HAC/1028/2026 on the public e-invoicing solution (BOE)"
+      }
+    },
+    "rd1619": {
+      "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2012-14696",
+      "label": {
+        "es": "Real Decreto 1619/2012, Reglamento de facturación (BOE, texto consolidado)",
+        "en": "Royal Decree 1619/2012, Invoicing Regulation (BOE, consolidated text)"
+      }
+    },
+    "riva": {
+      "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1992-28925",
+      "label": {
+        "es": "Real Decreto 1624/1992, Reglamento del IVA: artículos 62, 68 bis y 69 bis (BOE)",
+        "en": "Royal Decree 1624/1992, VAT Regulation: articles 62, 68 bis and 69 bis (BOE)"
+      }
+    },
+    "ley25": {
+      "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2013-13722",
+      "label": {
+        "es": "Ley 25/2013, de impulso de la factura electrónica en el sector público (BOE)",
+        "en": "Law 25/2013 on e-invoicing in the public sector (BOE)"
+      }
+    },
+    "orden1074": {
+      "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2014-6662",
+      "label": {
+        "es": "Orden HAP/1074/2014, condiciones técnicas de los puntos generales de entrada (BOE)",
+        "en": "Order HAP/1074/2014 on the technical rules of the public invoice entry points (BOE)"
+      }
+    },
+    "festivos2026": {
+      "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2025-21667",
+      "label": {
+        "es": "Resolución de 17 de octubre de 2025, fiestas laborales para 2026 (BOE)",
+        "en": "Resolution of 17 October 2025, public holidays for 2026 (BOE)"
+      }
+    },
+    "festivos2027": {
+      "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-21254",
+      "label": {
+        "es": "Resolución de 8 de octubre de 2026, fiestas laborales para 2027 (BOE)",
+        "en": "Resolution of 8 October 2026, public holidays for 2027 (BOE)"
+      }
+    },
+    "aeatSif": {
+      "url": "https://sede.agenciatributaria.gob.es/Sede/iva/sistemas-informaticos-facturacion-verifactu.html",
+      "label": {
+        "es": "Agencia Tributaria: sistemas informáticos de facturación y VERI*FACTU",
+        "en": "Spanish Tax Agency: invoicing systems and VERI*FACTU"
+      }
+    },
+    "aeatQr": {
+      "url": "https://www.agenciatributaria.es/static_files/AEAT_Desarrolladores/EEDD/IVA/VERI-FACTU/DetalleEspecificacTecnCodigoQRfactura.pdf",
+      "label": {
+        "es": "AEAT: características del QR y servicio de cotejo, versión 0.5.0 (PDF)",
+        "en": "AEAT: QR code specification and matching service, version 0.5.0 (PDF)"
+      }
+    },
+    "aeatHuella": {
+      "url": "https://www.agenciatributaria.es/static_files/AEAT_Desarrolladores/EEDD/IVA/VERI-FACTU/Veri-Factu_especificaciones_huella_hash_registros.pdf",
+      "label": {
+        "es": "AEAT: algoritmo de cálculo de la huella o hash, versión 0.1.2 (PDF)",
+        "en": "AEAT: hash calculation algorithm, version 0.1.2 (PDF)"
+      }
+    },
+    "aeatFaq": {
+      "url": "https://sede.agenciatributaria.gob.es/static_files/AEAT_Desarrolladores/EEDD/IVA/VERI-FACTU/FAQs-Desarrolladores.pdf",
+      "label": {
+        "es": "AEAT: preguntas frecuentes para desarrolladores VERI*FACTU, versión 1.3 (PDF)",
+        "en": "AEAT: VERI*FACTU developer FAQ, version 1.3 (PDF)"
+      }
+    },
+    "aeatTecnica": {
+      "url": "https://sede.agenciatributaria.gob.es/Sede/iva/sistemas-informaticos-facturacion-verifactu/informacion-tecnica.html",
+      "label": {
+        "es": "AEAT: información técnica VERI*FACTU (esquemas, servicios, portal de pruebas)",
+        "en": "AEAT: VERI*FACTU technical information (schemas, services, test portal)"
+      }
+    },
+    "facturae": {
+      "url": "https://www.facturae.gob.es/formato/ultima-version",
+      "label": {
+        "es": "Facturae: última versión del formato, 3.2.2 (facturae.gob.es)",
+        "en": "Facturae: latest format version, 3.2.2 (facturae.gob.es)"
+      }
+    },
+    "facturaeApp": {
+      "url": "https://www.facturae.gob.es/formato/descarga-aplicacion-escritorio/descarga-aplicaciones",
+      "label": {
+        "es": "Facturae: descarga de la aplicación de escritorio 3.4 (facturae.gob.es)",
+        "en": "Facturae: desktop application 3.4 download (facturae.gob.es)"
+      }
+    },
+    "facturaeFirma": {
+      "url": "https://www.facturae.gob.es/formato/politicas-firma-electronica",
+      "label": {
+        "es": "Facturae: política de firma electrónica (facturae.gob.es)",
+        "en": "Facturae: electronic signature policy (facturae.gob.es)"
+      }
+    },
+    "face": {
+      "url": "https://face.gob.es/es",
+      "label": {
+        "es": "FACe, Punto General de Entrada de Facturas Electrónicas de la AGE",
+        "en": "FACe, the central government's e-invoice entry point"
+      }
+    },
+    "gipuzkoa": {
+      "url": "https://www.gipuzkoa.eus/es/web/ogasuna/ticketbai",
+      "label": {
+        "es": "Diputación Foral de Gipuzkoa: TicketBAI",
+        "en": "Provincial Council of Gipuzkoa: TicketBAI"
+      }
+    },
+    "araba": {
+      "url": "https://web.araba.eus/es/hacienda/ticketbai",
+      "label": {
+        "es": "Diputación Foral de Álava: TicketBAI",
+        "en": "Provincial Council of Álava: TicketBAI"
+      }
+    },
+    "batuz": {
+      "url": "https://www.batuz.eus/es/inicio",
+      "label": {
+        "es": "Hacienda Foral de Bizkaia: Batuz y TicketBAI",
+        "en": "Bizkaia Provincial Treasury: Batuz and TicketBAI"
+      }
+    },
+    "navarra": {
+      "url": "https://www.navarra.es/es/hacienda",
+      "label": {
+        "es": "Hacienda Foral de Navarra",
+        "en": "Navarre Provincial Treasury"
+      }
+    }
+  }
+}

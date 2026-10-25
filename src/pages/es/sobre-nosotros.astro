@@ -1,0 +1,32 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import LegalIdentity from '../../components/LegalIdentity.astro';
+import { route } from '../../i18n/routes';
+import { AUTHOR_NAME, AUTHOR_DESC, CONTACT_EMAIL, SITE_NAMES } from '../../data/site-config';
+import { srcLink } from '../../lib/helpers';
+import { profilePageSchema, breadcrumbSchema } from '../../lib/seo';
+const lang = 'es';
+const path = route('about', lang);
+const title = 'Quiénes somos en ES Verifactu 2026: editor y fuentes';
+const description = 'ES Verifactu 2026 lo publica Radif Partners: herramientas gratuitas e independientes sobre Verifactu y factura electrónica que funcionan en tu navegador.';
+const s = (k: string, t: string) => srcLink(k, lang, t);
+---
+<PageLayout title={title} description={description} lang={lang} jsonLd={[profilePageSchema({ path, lang }), breadcrumbSchema([{ name: 'Inicio', path: route('home', lang) }, { name: 'Quiénes somos', path }])]} breadcrumbs={[{ label: 'Quiénes somos' }]}>
+  <article class="prose prose-slate max-w-none">
+    <h1>Quiénes somos</h1>
+    <p>{AUTHOR_DESC.es}</p>
+    <h2>Por qué existe {SITE_NAMES[lang]}</h2>
+    <p>Las fechas de Verifactu se han movido tres veces y la factura electrónica entre empresas tuvo durante años una ley sin reglamento. Muchos artículos sobre el tema llevan fechas que ya no valen, y casi todos los que explican la norma venden a la vez un programa. Aquí queremos lo contrario: que en un minuto sepas si te afecta y cuándo, con el artículo del BOE al lado, y que puedas leer un QR, calcular una huella o crear un Facturae sin que ningún dato salga de tu equipo.</p>
+    <h2>Quién lo publica</h2>
+    <p>Lo publica {AUTHOR_NAME}, una sociedad que construye herramientas a partir de normas y datos públicos. {AUTHOR_NAME} no es una administración, ni un asesor fiscal, ni un despacho. El sitio no tiene relación con la Agencia Tributaria, el Ministerio de Hacienda, las Haciendas forales ni con ningún fabricante de programas, y no usa sus logotipos. No vende programas ni tiene enlaces de afiliación.</p>
+    <LegalIdentity lang={lang} />
+    <h2>De dónde salen las reglas</h2>
+    <p>El calendario y el ámbito de Verifactu vienen del <Fragment set:html={s('rd1007', 'Real Decreto 1007/2023')} /> en la redacción del <Fragment set:html={s('rdl15', 'Real Decreto-ley 15/2025')} />; los detalles técnicos, de la <Fragment set:html={s('orden1177', 'Orden HAC/1177/2024')} /> y de las especificaciones de la AEAT. La factura electrónica entre empresas, de la <Fragment set:html={s('ley18', 'Ley 18/2022')} />, el <Fragment set:html={s('rd238', 'Real Decreto 238/2026')} /> y la <Fragment set:html={s('orden1028', 'Orden HAC/1028/2026')} />. Las sanciones, de la <Fragment set:html={s('lgt', 'Ley General Tributaria')} />. Cómo calculamos está en la página de <a href={route('method', lang)}>método</a>; cómo corregimos, en la <a href={route('editorial', lang)}>política editorial</a>.</p>
+    <h2>Tus datos</h2>
+    <p>Las herramientas trabajan solo en tu navegador: no hay cuenta, ni formulario que nos envíe tus facturas, ni almacenamiento de ficheros. El detalle está en la <a href={route('privacy', lang)}>política de privacidad</a>.</p>
+    <h2>Lo que el sitio no hace</h2>
+    <p>No emite facturas por ti, no envía registros a la AEAT, no firma documentos, no es un sistema de facturación certificado y no presta asesoramiento fiscal. Los resultados se apoyan en la norma publicada; tu caso concreto lo valoran tu asesor y la Administración.</p>
+    <h2>Escríbenos</h2>
+    <p><a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>, si ves una fecha desfasada, una regla mal leída o un Facturae que el visor no muestra bien.</p>
+  </article>
+</PageLayout>

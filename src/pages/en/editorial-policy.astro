@@ -1,0 +1,27 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { AUTHOR_NAME, CONTACT_EMAIL, LAST_UPDATED, REVIEW_CYCLE_MONTHS, SITE_NAMES } from '../../data/site-config';
+import { route } from '../../i18n/routes';
+const lang = 'en';
+---
+<PageLayout title={`Editorial policy of ${SITE_NAMES[lang]}: sources and checks`} description="Where dates, rules and format details come from, the order in which sources rank, how we test the tools, when we update and what happens when something is wrong." lang={lang} noindex={true} breadcrumbs={[{ label: 'Editorial policy' }]} showAuthor={false}>
+  <div class="prose prose-slate max-w-none">
+    <h1>Editorial policy and corrections</h1>
+    <p>Planning around a wrong date or issuing an invoice in a format that does not count costs time and money. This page says where everything comes from and what we do when something is wrong.</p>
+    <h2>Responsibility</h2><p>{AUTHOR_NAME} is responsible for the content and tools. Contact: <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.</p>
+    <h2>Ranking of sources</h2>
+    <ol>
+      <li><strong>Laws, royal decrees and orders</strong> published in the BOE, in their current consolidated text: General Tax Act, RD 1007/2023, Order HAC/1177/2024, Law 18/2022, RD 238/2026, Order HAC/1028/2026, the Invoicing Regulation and the VAT Regulation;</li>
+      <li><strong>Spanish Tax Agency technical documents</strong>: the QR and hash specifications and the developer FAQ;</li>
+      <li><strong>The Facturae format</strong>: schema and signature policy published on facturae.gob.es; for foral territories, each provincial treasury’s pages.</li>
+    </ol>
+    <p>Press articles, forums and software vendors’ blogs are not a source for a rule. If two sources conflict, the higher one prevails and we say so.</p>
+    <h2>Every figure dated</h2><p>Every date, threshold and amount is stored with its source and reading date in a parameter file. Pages read their figures from that file, never from the text. Anything announced or in draft is marked as such and enters the tools only once published in the BOE.</p>
+    <h2>Testing</h2><p>The hash is tested on the official AEAT examples, generated Facturae files against the official schema, and the rules with cases written from the legal text. Tests run on every change.</p>
+    <h2>Schedule</h2><p>A full review at least every {REVIEW_CYCLE_MONTHS} months and after any change on Verifactu or e-invoicing published in the BOE or on the AEAT website.</p>
+    <h2>Corrections</h2>
+    <ol><li>Check against the source.</li><li>Fix the parameter file or rule and add a test.</li><li>New date on every page.</li></ol>
+    <h2>Independence</h2><p>No money from software vendors, accounting firms or public bodies. No affiliate links, sponsored content, brand recommendations or lead forms.</p>
+    <p>See also the <a href={route('method', lang)}>method</a>. Version: {LAST_UPDATED}.</p>
+  </div>
+</PageLayout>

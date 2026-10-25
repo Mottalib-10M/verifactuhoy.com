@@ -1,0 +1,22 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { CONTACT_EMAIL, SITE_NAMES } from '../../data/site-config';
+import { route } from '../../i18n/routes';
+import { contactPageSchema } from '../../lib/seo';
+const lang = 'en';
+const description = 'Write to us if a date or rule looks wrong, the viewer shows a Facturae file incorrectly, or you would like to embed one of the tools on your own website.';
+---
+<PageLayout title={`Contact ${SITE_NAMES[lang]}: report an error, embed a tool`} description={description} lang={lang} noindex={true} jsonLd={[contactPageSchema({ name: 'Contact', description, path: route('contact', lang), lang })]} breadcrumbs={[{ label: 'Contact' }]} showAuthor={false}>
+  <div class="prose prose-slate max-w-none">
+    <h1>Contact</h1>
+    <p>Email: <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. We usually reply within a week.</p>
+    <h2>A date or rule looks wrong</h2>
+    <p>Name the page, the sentence and, if possible, the BOE article or AEAT document. We check against the source and correct within a few days.</p>
+    <h2>The viewer or reader shows a file incorrectly</h2>
+    <p>Describe which field is wrong and the Facturae version. Please do not send a real invoice with names, tax IDs or bank details: replace them with made-up values first; the file structure is enough for us to find the fault.</p>
+    <h2>Embedding a tool</h2>
+    <p>Associations, professional bodies, accounting firms and chambers can embed the Verifactu check, the QR reader and the B2B e-invoicing checker for free: <a href={route('widget', lang)}>embed</a>.</p>
+    <h2>What we do not do</h2>
+    <p>No individual tax advice, no review of your books, no sending of invoices and no software setup. Advisers and invoicing software providers handle those.</p>
+  </div>
+</PageLayout>

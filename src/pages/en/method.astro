@@ -1,0 +1,37 @@
+---
+/** Method: rules, hash, QR, Facturae, testing, limits. Every figure from params-2026.json. */
+import PageLayout from '../../layouts/PageLayout.astro';
+import { route } from '../../i18n/routes';
+import { KIT as K } from '../../lib/kit';
+import { srcLink } from '../../lib/helpers';
+import { breadcrumbSchema, webPageSchema } from '../../lib/seo';
+import { displayDate, formatMoney } from '../../lib/format';
+const lang = 'en';
+const path = route('method', lang);
+const P = K.P, V = P.verifactu, B = P.b2b;
+const title = 'ES Verifactu Method 2026: Rules, Calculations, Testing';
+const description = 'How the tools work in 2026: dates from the BOE, a SHA-256 hash tested on the AEAT examples, the QR URL format and Facturae output validated against the schema.';
+const s = (k: string, t: string) => srcLink(k, lang, t);
+const d = (x: string) => displayDate(x, 'en-GB');
+const eur = (x: number) => formatMoney(x, 0, lang);
+---
+<PageLayout title={title} description={description} lang={lang} jsonLd={[webPageSchema({ name: 'Method', description, path, lang }), breadcrumbSchema([{ name: 'Home', path: route('home', lang) }, { name: 'Method', path }])]} breadcrumbs={[{ label: 'Method' }]}>
+  <article class="prose prose-slate max-w-none">
+    <h1>How the tools calculate</h1>
+    <p>Every tool runs in your browser. A QR image, a Facturae file you open or the data you type into the creator stay on your device: no upload, no account, no storage. The basis is the text published in the BOE (Spain’s official gazette) and the technical specifications of the Spanish Tax Agency (AEAT). Latest reading: {d(P.retrieved_at)}.</p>
+    <h2>Dates and thresholds</h2>
+    <p>The calculators read their values from a single file in which every figure carries its source and reading date. For Verifactu: systems adapted before {d(V.sociedadesAntes)} for corporate income taxpayers and before {d(V.restoAntes)} for everyone else, under the fourth final provision of <Fragment set:html={s('rd1007', 'RD 1007/2023')} /> as worded by <Fragment set:html={s('rdl15', 'RDL 15/2025')} />. Before that text the dates were 1 January and 1 July 2026 (<Fragment set:html={s('rd254', 'RD 254/2025')} />). For B2B e-invoicing: {B.mesesGrandes} months (turnover above {eur(B.umbral)}) or {B.mesesResto} months counted from the entry into force of <Fragment set:html={s('orden1028', 'Order HAC/1028/2026')} /> on {d(B.ordenVigor)}. The resulting dates, {d(B.fechaGrandes)} and {d(B.fechaResto)}, are our date-to-date calculation: the BOE does not spell them out.</p>
+    <h2>Day-count deadlines</h2>
+    <p>SII deadlines and B2B invoice status deadlines count calendar days excluding Saturdays, Sundays and national holidays. We use the national holidays common to all regions published in the Directorate-General for Labour resolutions for <Fragment set:html={s('festivos2026', '2026')} /> and <Fragment set:html={s('festivos2027', '2027')} />. For dates in other years the tool says so.</p>
+    <h2>The hash</h2>
+    <p>The calculator applies the algorithm in the <Fragment set:html={s('aeatHuella', 'AEAT document')} /> (version {P.huella.docVersion}): a field=value string joined by “&amp;”, values trimmed, UTF-8 encoding and SHA-256 in uppercase hexadecimal. The SHA-256 is written in plain JavaScript, independent of the browser. Automated tests check that it returns exactly the three hashes the AEAT publishes for its registration, chained registration and cancellation examples.</p>
+    <h2>The QR code</h2>
+    <p>The reader recognises production and test matching URLs in both variants (VERI*FACTU and non-VERI*FACTU) and checks each parameter against the <Fragment set:html={s('aeatQr', 'QR specification')} /> (version {P.qr.docVersion}): a 9-character tax ID, a series and number of up to {P.qr.numserieMax} printable characters, a DD-MM-YYYY date and up to {P.qr.importeEnterosMax} digits with 2 decimals. It applies the modulo-23 check to DNI and NIE letters. A correct format does not prove the invoice exists: only the AEAT matching page can say that.</p>
+    <h2>Facturae</h2>
+    <p>The creator produces an unsigned Facturae {P.facturae.version} XML. Tests build sample invoices (to a business and to a public body with its three DIR3 codes, with and without withholding) and validate them with xmllint against the <Fragment set:html={s('facturae', 'official Facturae 3.2.2 schema')} />, downloaded from facturae.gob.es at test time and not copied into the site. The viewer recalculates sums, tax amounts and total, and says whether the file is signed; it does not validate the certificate.</p>
+    <h2>Limits</h2>
+    <p>The tools do not know your books or contracts. Foral territories are covered only to say that their own rules apply. No tool signs, sends records to the AEAT or replaces a compliant invoicing system. Penalties use the fixed amounts in article 201 bis; the actual decision rests with the tax authority.</p>
+    <h2>Updates</h2>
+    <p>We reread the BOE and the AEAT website regularly. A change goes live only once every test passes again. Report errors through the <a href={route('contact', lang)}>contact page</a>; how we correct them is set out in the <a href={route('editorial', lang)}>editorial policy</a>.</p>
+  </article>
+</PageLayout>

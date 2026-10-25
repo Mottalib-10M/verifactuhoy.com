@@ -1,0 +1,21 @@
+---
+/** L'outil d'une page : un simulateur déclaratif de tool-specs.ts, ou un outil de fichier (lecteur QR, générateur QR, huella, créateur et visor Facturae). */
+import SpecTool from './calc/SpecTool';
+import Lector from './vf/Lector';
+import QrGen from './vf/QrGen';
+import Huella from './vf/Huella';
+import Creador from './vf/Creador';
+import Visor from './vf/Visor';
+import Calendario from './vf/Calendario';
+import { route } from '../i18n/routes';
+import type { Lang } from '../lib/format';
+interface Props { kind: string; lang: Lang; arg?: Record<string, number | string>; idPrefix?: string }
+const { kind, lang, arg, idPrefix = 't' } = Astro.props;
+---
+{kind === 'lector' ? <Lector client:load lang={lang} idPrefix={idPrefix} />
+  : kind === 'qrgen' ? <QrGen client:load lang={lang} idPrefix={idPrefix} />
+  : kind === 'huella' ? <Huella client:load lang={lang} idPrefix={idPrefix} />
+  : kind === 'creador' ? <Creador client:load lang={lang} preset={String(arg?.preset ?? 'empresa')} idPrefix={idPrefix} />
+  : kind === 'frise' ? <Calendario client:visible lang={lang} idPrefix={idPrefix} />
+  : kind === 'visor' ? <Visor client:load lang={lang} idPrefix={idPrefix} />
+  : <SpecTool client:load kind={kind} lang={lang} arg={arg ? JSON.stringify(arg) : undefined} methodHref={route('method', lang)} idPrefix={idPrefix} />}

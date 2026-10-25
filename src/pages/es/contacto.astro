@@ -1,0 +1,22 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { CONTACT_EMAIL, SITE_NAMES } from '../../data/site-config';
+import { route } from '../../i18n/routes';
+import { contactPageSchema } from '../../lib/seo';
+const lang = 'es';
+const description = 'Escríbenos si una fecha o una regla parece incorrecta, si el visor muestra mal un Facturae o si quieres insertar una de las herramientas en tu propia web.';
+---
+<PageLayout title={`Contacto de ${SITE_NAMES[lang]}: avisar de un error, insertar una herramienta`} description={description} lang={lang} noindex={true} jsonLd={[contactPageSchema({ name: 'Contacto', description, path: route('contact', lang), lang })]} breadcrumbs={[{ label: 'Contacto' }]} showAuthor={false}>
+  <div class="prose prose-slate max-w-none">
+    <h1>Contacto</h1>
+    <p>Correo: <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. Solemos responder en una semana.</p>
+    <h2>Una fecha o una regla parece incorrecta</h2>
+    <p>Indica la página, la frase y, si puedes, el artículo del BOE o el documento de la AEAT. Lo comprobamos en la fuente y corregimos en pocos días.</p>
+    <h2>El visor o el lector muestran mal un fichero</h2>
+    <p>Describe qué dato sale mal y la versión de Facturae. No nos envíes una factura real con nombres, NIF o cuentas: cámbialos antes por datos inventados; la estructura del fichero basta para encontrar el fallo.</p>
+    <h2>Insertar una herramienta</h2>
+    <p>Asociaciones, colegios profesionales, gestorías y cámaras pueden insertar gratis el diagnóstico Verifactu, el lector del QR y el checker de la factura B2B: <a href={route('widget', lang)}>insertar</a>.</p>
+    <h2>Lo que no hacemos</h2>
+    <p>Ni asesoramiento fiscal individual, ni revisión de tu contabilidad, ni envío de facturas, ni instalación de programas. Para eso están los asesores y los proveedores de programas de facturación.</p>
+  </div>
+</PageLayout>
